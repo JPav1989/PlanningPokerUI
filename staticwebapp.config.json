@@ -1,0 +1,21 @@
+{
+  "routes": [
+    {
+      "route": "*.js",
+      "headers": {
+        "Content-Type": "application/javascript"
+      }
+    },
+    {
+      "route": "*.mjs",
+      "headers": {
+        "Content-Type": "application/javascript"
+      }
+    }
+    // Add other routes as needed for your assets (CSS, images, etc.)
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "fallbackStatusCode": 200
+  }
+}
