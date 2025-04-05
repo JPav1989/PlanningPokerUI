@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -14,7 +14,7 @@ import {
     Loader2
 } from 'lucide-react';
 import { cn } from "@/lib/utils"
-import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+import { HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 
 
 // --- Constants ---
@@ -474,7 +474,7 @@ const PlanningPokerApp = () => {
             setUser(null);
             setRoom(null);
             if (hubConnection) { 
-                hubConnection.stop().catch(e => console.error("Error stopping connection after join failure", e));
+                hubConnection.stop().catch((e: Error) => console.error("Error stopping connection after join failure", e));
                 setHubConnection(null);
             }
         } finally {
@@ -543,7 +543,7 @@ const PlanningPokerApp = () => {
         const connection = hubConnection;
         return () => {
             if (connection) {
-                connection.stop().catch(err => console.error("Error stopping connection on unmount:", err));
+                connection.stop().catch((err: Error) => console.error("Error stopping connection on unmount:", err));
             }
         };
     }, [hubConnection]); 
