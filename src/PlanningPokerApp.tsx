@@ -18,8 +18,8 @@ import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signal
 
 
 // --- Constants ---
-const API_BASE_URL = 'https://localhost:7273/api/PlanningPoker';
-//const API_BASE_URL = 'https://planningpokerapi-gma9accfbhasc9ae.ukwest-01.azurewebsites.net/api/PlanningPoker';
+//const API_BASE_URL = 'https://localhost:7273/api/PlanningPoker';
+const API_BASE_URL = 'https://planningpokerapi-gma9accfbhasc9ae.ukwest-01.azurewebsites.net/api/PlanningPoker';
 const FIBONACCI_NUMBERS = ['0', '1', '2', '3', '5', '8', '13', '21', '?' ];
 
 const createRoom = async (roomId: string): Promise<string> => {
